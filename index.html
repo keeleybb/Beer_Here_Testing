@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Import Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Serif+Display|Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Link to our css file -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Beer Here</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="slider">
+      <ul class="slides">
+        <li>
+          <img src="beerVariety.jpg"> 
+          <div class="caption center-align">
+            <h2>Find your new favorite brewery</h2>
+          </div>
+        </li>
+        <li>
+          <img src="beerIsFun.jpg"> 
+          <div class="caption right-align">
+            <h2>Friendship goes better with beer</h2>
+          </div>
+        </li>
+        <li>
+          <img src="niceBeer.jpg">
+          <div class="caption center-align">
+            <h2>Craft beer in your neighborhood</h2>
+          </div>
+        </li>
+        <li>
+          <img src="glassMug.jpg"> 
+          <div class="caption right-align">
+            <h2>Three Cheers for Beer Here!</h2>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Card panel to make space between header and search -->
+    <div class="card-panel">
+      <span class="white-text">Enter your city or state and click "Find Beer Now" to begin your search
+      </span>
+  </div>
+    <!-- Search area -->
+    <div class="container" id="search">
+      <div class="col s6">
+        <div class="row">
+          <div class="input-field col m4">
+            <input id="city-input" type="text"> <!--Removed name id-->
+            <label for="name">City</label>
+          </div>
+      </div>
+      <!-- Select State dropdown -->
+      <div class="input-field col m4" id="state">
+        <select id="state-option">
+          <option value="" disabled selected>Select your state</option>
+          <option value="1">Alabama</option>
+          <option value="2">Alaska</option>
+          <option value="3">Arizona</option>
+          <option value="4">Arkansas</option>
+          <option value="5">California</option>
+          <option value="6">Colorado</option>
+          <option value="7">Connecticut</option>
+          <option value="8">Delaware</option>
+          <option value="9">Florida</option>
+          <option value="10">Georgia</option>
+          <option value="11">Hawaii</option>
+          <option value="12">Idaho</option>
+          <option value="13">Illinois</option>
+          <option value="14">Indiana</option>
+          <option value="15">Iowa</option>
+          <option value="16">Kansas</option>
+          <option value="17">Kentucky</option>
+          <option value="18">Louisiana</option>
+          <option value="19">Maine</option>
+          <option value="20">Maryland</option>
+          <option value="21">Massachusetts</option>
+          <option value="22">Michigan</option>
+          <option value="23">Minnesota</option>
+          <option value="24">Mississippi</option>
+          <option value="25">Missouri</option>
+          <option value="26">Montana</option>
+          <option value="27">Nebraska</option>
+          <option value="28">Nevada</option>
+          <option value="29">New Hampshire</option>
+          <option value="30">New Jersey</option>
+          <option value="31">New Mexico</option>
+          <option value="32">New York</option>
+          <option value="33">North Carolina</option>
+          <option value="34">North Dakota</option>
+          <option value="35">Ohio</option>
+          <option value="36">Oklahoma</option>
+          <option value="37">Oregon</option>
+          <option value="38">Pennsylvania</option>
+          <option value="39">Rhode Island</option>
+          <option value="40">South Carolina</option>
+          <option value="41">South Dakota</option>
+          <option value="42">Tennessee</option>
+          <option value="43">Texas</option>
+          <option value="44">Utah</option>
+          <option value="45">Vermont</option>
+          <option value="46">Virginia</option>
+          <option value="47">Washington</option>
+          <option value="48">West Virginia</option>
+          <option value="49">Wisconsin</option>
+          <option value="50">Wyoming</option>
+        </select>
+        <label>State</label>
+      </div>  
+    </div>  
+        <!-- Send button -->
+        <button
+          id="find-beer"
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+        >
+          Find Beer Now
+          <i class="material-icons right">local_drink</i>
+        </button>
+      </div>
+    </div>
+    <!-- Map -->
+    <div id="map"></div>
+    <!-- ICON LIST -->
+    <div class="container">
+      <ul  id="search-results" class="collection">
+      </ul>
+    </div>
+    <!-- Card panel to indicate footer begin -->
+    <div class="card-panel">
+    </div>
+    <!-- Footer -->
+    <div class="card horizontal">
+      <div class="card-image">
+        <img
+          src="https://pbs.twimg.com/profile_images/857899824481435649/PrVYolGS_400x400.jpg"
+        />
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h1 class="beerHere">Beer Here</h1>
+          <p>This has been a group project brought to you by <em>(in alphabetical order)</em> Heidi, Keeley, and Mel.</p>
+            <br><br>
+            <p2>Cheers!</p2>
+        </div>
+        <div class="card-action">
+          <a href="mailto:donotcontact@google.com">Contact us</a>
+        </div>
+      </div>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="script.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVbuVniitJyp6JVbYyfKZjhfj6gLKGKzY&callback=initMap"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="logic-2.js"></script>
+    <script>
+      M.AutoInit();
+    </script>
+  </body>
+</html>

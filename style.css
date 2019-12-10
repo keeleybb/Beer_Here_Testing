@@ -1,0 +1,53 @@
+h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: bold;
+  mix-blend-mode: darken;
+}
+.slider img {
+  filter: brightness(85%);
+}
+.card-panel {
+  background-image: linear-gradient(
+    to bottom,
+    #4a148c,
+    #62067f,
+    #710073,
+    #7c0067,
+    #83005c,
+    #930257,
+    #a20d51,
+    #ae1b4b,
+    #c72e43,
+    #dc4537,
+    #ec5f26,
+    #f57c00
+  );
+  text-align: center;
+}
+
+#state {
+  padding-bottom: 20px;
+}
+
+#search {
+  padding: 30px;
+}
+
+#map {
+  padding: 25px;
+}
+
+.beerHere {
+  font-family: "Special Elite", cursive;
+}
+
+p2 {
+  font-family: "Special Elite", cursive;
+  font-size: 28px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  margin: auto;
+}
