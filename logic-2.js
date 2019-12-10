@@ -1,23 +1,17 @@
 var state;
 var breweries = [];
 
-var $loading = $("#loadingDiv").hide();
-$(document)
-  .ajaxStart(function() {
-    $loading.show();
-  })
-  .ajaxStop(function() {
-    $loading.hide();
-  });
+var $loading = $("#loading").hide();
 
 function searchKickOff(city) {
+  $loading.show();
   //Start getting Data from OpenDB
   var queryURL =
     "https://api.openbrewerydb.org/breweries?by_city=" +
     city +
     "&by_state=" +
     state +
-    "&page=1&per_page=25";
+    "&page=1&per_page=20";
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -35,6 +29,7 @@ function searchKickOff(city) {
         var breweryLat = response[i].latitude;
         var breweryLon = response[i].longitude;
         var breweryPhone = response[i].phone;
+        var breweryDBAddress = response[i].address;
         if (breweryPhone > 0) {
           var formattedPhone =
             breweryPhone.substr(0, 3) +
@@ -85,7 +80,8 @@ function searchKickOff(city) {
       });
       console.log(breweries[0].breweryLat);
       console.log(breweries[0].breweryLon);
-      // The location of Uluru
+      // The location of the first brewery
+
       var point = {
         lat: parseFloat(breweries[0].breweryLat),
         lng: parseFloat(breweries[0].breweryLon)
@@ -101,6 +97,7 @@ function searchKickOff(city) {
       // console.log(breweries);
       //Send breweries to be added to page
       breweries.map(callPage);
+      $loading.hide();
       //End
     } else {
       //Add to search results to page
