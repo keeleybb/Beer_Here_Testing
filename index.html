@@ -57,7 +57,7 @@
     </div>
     <!-- Card panel to make space between header and search -->
     <div class="card-panel">
-      <span class="white-text">Enter your city or state and click "Find Beer Now" to begin your search
+      <span class="white-text">Enter your city and state and click "Find Beer Now" to begin your search
       </span>
   </div>
     <!-- Search area -->
@@ -69,7 +69,6 @@
             <label for="name">City</label>
           </div>
       </div>
-
       <!-- Select State dropdown -->
       <div class="input-field col m4" id="state">
         <select id="state-option">
@@ -127,9 +126,6 @@
         </select>
         <label>State</label>
       </div>  
-      <div id="loading">
-        Here is some text to say that you have to wait for beer
-      </div>
     </div>  
         <!-- Send button -->
         <button
@@ -143,13 +139,22 @@
         </button>
       </div>
     </div>
+    <!-- Preloader -->
+    <div class="container">
+      <div class="progress" id="loading">
+          <div class="indeterminate"></div>
+      </div>
+    </div>
     <!-- Map -->
-    <div id="map"></div>
+    <div class="container">
+      <div id="map"></div>
+    </div>
     <!-- ICON LIST -->
     <div class="container">
       <ul  id="search-results" class="collection">
       </ul>
     </div>
+    <div style="height:50px"></div>
     <!-- Card panel to indicate footer begin -->
     <div class="card-panel">
     </div>

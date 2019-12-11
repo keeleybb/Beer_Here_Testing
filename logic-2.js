@@ -11,7 +11,7 @@ function searchKickOff(city) {
     city +
     "&by_state=" +
     state +
-    "&page=1&per_page=20";
+    "&page=1&per_page=10";
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -29,7 +29,6 @@ function searchKickOff(city) {
         var breweryLat = response[i].latitude;
         var breweryLon = response[i].longitude;
         var breweryPhone = response[i].phone;
-        var breweryDBAddress = response[i].address;
         if (breweryPhone > 0) {
           var formattedPhone =
             breweryPhone.substr(0, 3) +
@@ -80,17 +79,17 @@ function searchKickOff(city) {
       });
       console.log(breweries[0].breweryLat);
       console.log(breweries[0].breweryLon);
-      // The location of the first brewery
-
+      // The location of Uluru
       var point = {
         lat: parseFloat(breweries[0].breweryLat),
         lng: parseFloat(breweries[0].breweryLon)
       };
       // The map, centered at Uluru
       map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 12,
+        zoom: 10,
         center: point
       });
+
       // The marker, positioned at Uluru
       var marker = new google.maps.Marker({ position: point, map: map });
 
